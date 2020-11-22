@@ -1,0 +1,248 @@
+@import 'theme/blue'; // @import must be on first line!
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: $white4 transparent;
+}
+
+body{
+  background: $black1;
+  color: $white2;
+  text-align: center;
+  font-family: Ubuntu, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: 12pt;
+}
+
+
+::-webkit-scrollbar {
+ width: 6px;
+}
+::-webkit-scrollbar-track {
+ background: transparent;
+}
+::-webkit-scrollbar-thumb {
+ background: $white4;
+ border-radius: $border-radius1;
+}
+
+aside{
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 300px;
+  overflow: auto;
+  height: 100vh;
+}
+
+::selection{
+  background: $theme;
+  color: $white0;
+}
+
+main{
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+  background: $black3;
+  padding: 30px;
+  min-height: 100vh;
+  border-left: $border-width solid $theme-bright;
+  border-right: $border-width solid $theme-bright;
+
+  p, label{
+    color: $white4;
+    font-weight: normal;
+  }
+
+
+  textarea{
+    background: $black2;
+    color: $white3;
+    width: 100%;
+    height: 700px;
+    padding: 20px;
+    border: $border-width solid $black0;
+    border-radius: $border-radius2;
+    outline: none !important;
+    height: 750px;
+    &:focus{
+      border-color: $theme;
+    }
+  }
+
+  code{
+    background: $black2;
+    border: $border-width solid $black0;
+    padding: 0 4px;
+    border-radius: $border-radius1;
+  }
+
+  input{
+    font-family: inherit;
+  }
+
+  input[type="text"], .color-wrap{
+    outline: none !important;
+    background: $black2;
+    border: $border-width solid $black1;
+    padding: 8px 16px;
+    color: $white3;
+    border-radius: $border-radius1;
+    &:focus{
+      border-color: $theme;
+      background: $black1;
+      color: $white2;
+    }
+  }
+  .color-wrap{
+    padding: 0;
+    display: inline-block;
+    &:focus-within{
+      border-color: $theme;
+      background: $black1;
+      color: $white2;
+    }
+    input[type="text"]{
+      position: relative;
+      top: -4px;
+    }
+  }
+  .reset-input{
+    border: none !important;
+    background-color: inherit !important;
+    padding: none !important;
+  }
+  input[type="color"]{
+    outline: none !important;
+    background: $black2;
+    border: none;
+    padding: 0;
+    height: 40px;
+    margin: -4px 0;
+    width: 64px;
+    color: $white3;
+    position: relative;
+    top: 5px;
+    left: 25px;
+    clip-path: circle(15px at 18px 20px);
+    transition: $transition-time;
+    &:hover{
+      filter: invert(20%);
+      cursor: pointer;
+    }
+    &:focus{
+      border-color: $theme;
+      background: $black1;
+      color: $white2;
+    }
+  }
+  input[type="button"], input[type="submit"], button{
+    outline: none !important;
+    background: $theme2;
+    border: $border-width*1.5 solid mix($theme2, $black4, 10%);
+    padding: 10px 20px;
+    border-radius: $border-radius2;
+    color: $white0;
+    font-size: 14pt;
+    font-weight: 700;
+    font-family: inherit;
+    margin: auto 0;
+    transition: $transition-time;
+    &:hover{
+      background: $theme2-bright;
+      cursor: pointer;
+    }
+    &:active{
+      transition: 0s;
+      background: $theme2-dark;
+      border-color: $theme2-dark;
+    }
+  }
+}
+
+label{
+  display: block;
+  font-weight: bold;
+}
+
+p.short{
+  font-size: 10pt;
+  color: mix($white4, $black1);
+}
+
+.cbox{
+  border-radius: $border-radius1;
+  padding: 5px;
+  margin: 3px 0;
+  border: $border-width solid $black1;
+  font-weight: bold;
+  box-sizing: border-box;
+  user-select: none;
+  width: 100%;
+  transition: $transition-time;
+  &:hover{
+    opacity: 0.9;
+    cursor: pointer;
+    border: $border-width solid $theme;
+  }
+}
+
+
+
+
+
+
+.theme{background: $theme; color:$black0;}
+.theme-dark{background: $theme-dark; color:$white1;}
+.theme-bright{background: $theme-bright; color:$black1;}
+
+.theme2{background: $theme2; color:$black0;}
+.theme2-dark{background: $theme2-dark; color:$white1;}
+.theme2-bright{background: $theme2-bright; color:$black1;}
+
+.theme-red{background: $theme-red; color:$white1;}
+.theme-yellow{background: $theme-yellow; color:$black1;}
+.theme-green{background: $theme-green; color:$black1;}
+.theme-blue{background: $theme-blue; color:$white1;}
+
+.black0{background: $black0; color:$white1;}
+.black1{background: $black1; color:$white1;}
+.black2{background: $black2; color:$white1;}
+.black3{background: $black3; color:$white1;}
+.black4{background: $black4; color:$white1;}
+.black5{background: $black5; color:$white1;}
+
+.white0{background: $white0; color:$black1;}
+.white1{background: $white1; color:$black1;}
+.white2{background: $white2; color:$black1;}
+.white3{background: $white3; color:$black1;}
+.white4{background: $white4; color:$black1;}
+
+.sample{
+  .left, .right{
+    width: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    height: 300px;
+    text-align: center;
+    padding: 60px 0;
+    .box{
+      &.short{
+        height: 10px;
+        width: 60px;
+      }
+      width: 100px;
+      height: 40px;
+      margin: auto;
+      margin-top: -10px;
+      border-radius: 30px;
+      &:hover{
+        cursor: pointer;
+        border: 2px solid $theme;
+      }
+    }
+  }
+}
