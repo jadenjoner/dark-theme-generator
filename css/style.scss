@@ -134,9 +134,7 @@ main{
       cursor: pointer;
     }
     &:focus{
-      border-color: $theme;
-      background: $black1;
-      color: $white2;
+      filter: none;
     }
   }
   input[type="button"], input[type="submit"], button{
